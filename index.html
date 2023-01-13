@@ -2,13 +2,35 @@
 <html>
 
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--Midea Q meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menus</title>
     <style>
         .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            height: 8vh;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            row-gap: 20px;
+            column-gap: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
         }
 
         button {
@@ -19,17 +41,13 @@
             padding: 15px 50px;
             letter-spacing: 2px;
             cursor: pointer;
-
+            width: 100%;
+            transition: 0.3s;
+            border-radius: 20px;
         }
 
         button:hover {
-            background-color: #9e9e9e;
-        }
-
-        @media (max-width: 768px) {
-            .button-container {
-                flex-direction: column;
-            }
+            transform: translate(0px, -5px);
         }
     </style>
 </head>
@@ -38,19 +56,18 @@
     <script>
         function MenuW() {
             window.open("Menu Western Big-01.png");
-        }   
-      
-       function MenuI() {
+        }
+        function MenuI() {
             window.open("Pasta Menu-01.png");
-        }   
+        }
      
     </script>
-
-    <div class="button-container"><button type="button" name="myButton" onclick="MenuW()"> WESTERN</button>
-    </div>
-    <div class="button-container"><button type="button" name="myButton" onclick="MenuI()">ITALIAN</button>
-    </div>
-
+    <section class="button-container">
+        <div class="button"><button type="button" name="myButton" onclick="MenuW()">WESTERN</button>
+        </div>
+        <div class="button"><button type="button" name="myButton" onclick="MenuI()">ITALIAN</button>
+        </div>
+    </section>
 </body>
 
 </html>
